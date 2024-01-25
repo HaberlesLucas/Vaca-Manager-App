@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Asistencia de Vacas</string>
+    <string name="editar">Editar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="ver_lista_de_vacas">VER LISTA DE VACAS</string>
+    <string name="a_adir_vaca">AÑADIR VACA</string>
+</resources>
