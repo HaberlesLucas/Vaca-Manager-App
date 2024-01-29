@@ -36,19 +36,17 @@ class DetalleVaca : AppCompatActivity() {
 
         val nombreVaca = findViewById<TextView>(R.id.txtNombreVaca)
         val nacimientoVaca = findViewById<TextView>(R.id.txtFechaNacimiento)
-        val preniezVaca = findViewById<TextView>(R.id.txtFechaPreniez)
         val caravanaVaca = findViewById<TextView>(R.id.txtNroCaravana)
         val ubicacionVaca = findViewById<TextView>(R.id.SnnUbicacion)
         val colorVaca = findViewById<TextView>(R.id.SnnColor)
 
         val vaca = ListaDeVacas.vacas!![intent.getIntExtra("position", 0)]
         if (vaca != null) {
-            nombreVaca.text = " Nombre: " + vaca.nombre_vaca
-            caravanaVaca.text = " Caravana: " + vaca.caravana
-            preniezVaca.text = " Preñada?: " + vaca.fecha_preniez
-            nacimientoVaca.text = " Fecha Nacimiento: " + vaca.fecha_nac
-            ubicacionVaca.text = " Ubicación: " + ColoresUbicaciones.ubicaciones[vaca.id_ubicacion!!]
-            colorVaca.text = " Color: " + ColoresUbicaciones.colores[vaca.id_color_vaca!!]
+            nombreVaca.text = "Nombre: " + vaca.nombre_vaca //?.toUpperCase()
+            caravanaVaca.text = "Caravana: " + vaca.caravana
+            nacimientoVaca.text = "Fecha Nacimiento: " + vaca.fecha_nac
+            ubicacionVaca.text = "Ubicación: " + ColoresUbicaciones.ubicaciones[vaca.id_ubicacion!!]
+            colorVaca.text = "Color: " + ColoresUbicaciones.colores[vaca.id_color_vaca!!]
         }
 
         val btnEliminarVaca = findViewById<Button>(R.id.btnEliminarVaca)
@@ -63,7 +61,7 @@ class DetalleVaca : AppCompatActivity() {
                     ListaDeVacas.vacas!!.removeAt(vaca.position)
                     ListaDeVacas.vacaAdapter!!.ordenarPosiciones()
                     ListaDeVacas.vacaAdapter!!.notifyItemRemoved(vaca.position)
-                    val mensaje = "Se eliminó a: " + vaca.nombre_vaca
+                    val mensaje = "Se eliminó a: " + vaca.nombre_vaca?.toUpperCase()
                     val duracion = Toast.LENGTH_SHORT // Duración de 3 segundos
                     val toast = Toast.makeText(this, mensaje, duracion)
                     toast.show()
@@ -71,7 +69,7 @@ class DetalleVaca : AppCompatActivity() {
                 }
                 builder.setNegativeButton("Cancelar") { dialog, which ->
                     // acción a realizar cuando se presiona el botón "Cancelar"
-                    val mensaje = "No se eliminó a: " + vaca.nombre_vaca
+                    val mensaje = "No se eliminó a: " + vaca.nombre_vaca?.toUpperCase()
                     val duracion = Toast.LENGTH_SHORT // Duración de 3 segundos
                     val toast = Toast.makeText(this, mensaje, duracion)
                     toast.show()

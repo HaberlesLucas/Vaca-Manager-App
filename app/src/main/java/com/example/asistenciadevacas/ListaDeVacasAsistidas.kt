@@ -1,6 +1,7 @@
 package com.example.asistenciadevacas
 
 import android.annotation.SuppressLint
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,10 +13,13 @@ class ListaDeVacasAsistidas : AppCompatActivity() {
         var nuevasVacas: MutableList<NuevoModelVaca>? = null
     }
 
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint("MissingInflatedId", "SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_de_vacas_asiste)
+
+        //no rotate pantasha
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         val listaVacas = findViewById<RecyclerView>(R.id.rvListaVacaAsiste)
         nuevasVacas = ConexionDB(this).getAllNuevasVacas()

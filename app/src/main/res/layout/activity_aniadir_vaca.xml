@@ -4,189 +4,196 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo2"
+    android:background="#92D692"
     android:contextClickable="false"
     android:textAlignment="center"
     tools:context=".AniadirVaca"
-    tools:layout_editor_absoluteX="-8dp"
-    tools:layout_editor_absoluteY="11dp">
+    >
 
-    <EditText
-        android:id="@+id/textInfoEncabezado"
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/editTextNombreFechNroCarv"
         android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:background="#B2000000"
-        android:text="AÑADE O EDITA TU VACA"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/cardScrol"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="parent"
+        android:layout_margin="10dp"
+        app:cardElevation="0dp">
 
-    <EditText
-        android:id="@+id/txtNombreVaca"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:background="@drawable/border_button_sin_color"
-        android:hint=" Nombre"
-        android:inputType="textPersonName"
-        android:padding="10dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.094" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/txtFechaNacimiento"
-        android:layout_width="match_parent"
-        android:layout_height="51dp"
-        android:layout_marginTop="152dp"
-        android:background="@drawable/border_button_sin_color"
-        android:ems="10"
-        android:hint=" Fecha Nacimiento"
-        android:inputType="date"
-        android:padding="10dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/txtNombreVaca"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="30dp"
+                android:background="@drawable/border_nombre_vaca"
+                android:hint="@string/nombre"
+                android:inputType="textPersonName"
+                android:paddingStart="15dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry" />
 
-    <EditText
-        android:id="@+id/txtNroCaravana"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="276dp"
-        android:background="@drawable/border_button_sin_color"
-        android:ems="10"
-        android:hint=" Número de Caravana"
-        android:inputType="textPersonName"
-        android:padding="10dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <EditText
+                android:id="@+id/txtFechaNacimiento"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="30dp"
+                android:background="@drawable/border_button_sin_color"
+                android:ems="10"
+                android:hint="@string/fecha_nacimiento"
+                android:inputType="date"
+                android:paddingStart="15dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry" />
 
-    <EditText
-        android:id="@+id/txtFechaPreniez"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="212dp"
-        android:background="@drawable/border_button_sin_color"
-        android:ems="10"
-        android:hint=" Fecha Preñez"
-        android:inputType="date"
-        android:padding="10dp"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+            <EditText
+                android:id="@+id/txtNroCaravana"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="30dp"
+                android:background="@drawable/border_button_sin_color"
+                android:ems="10"
+                android:hint="@string/n_mero_de_caravana"
+                android:inputType="textPersonName"
+                android:paddingStart="15dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-
-    <Spinner
-        android:id="@+id/SnnColor"
-        style="@style/SpinnerTextStyle"
-        android:layout_width="160dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="16dp"
-        android:background="#1976D2"
-        android:padding="10dp"
-        android:scrollbarSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/SnnUbicacion"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.557" />
-
-    <EditText
+    <TextView
         android:id="@+id/textInfo"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="30dp"
-        android:background="#1976D2"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:text="@string/selecciona_color_y_ubicaci_n"
         android:textAlignment="center"
-        android:text="  SELECCIONA COLOR Y UBICACIÓN"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:padding="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/cardScrol"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.481"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNombreFechNroCarv"
+        app:layout_constraintVertical_bias="0.963"
+        app:layout_constraintWidth_percent="0.8"
         tools:ignore="MissingConstraints,TouchTargetSizeCheck" />
 
-    <Spinner
-        android:id="@+id/SnnUbicacion"
-        style="@style/SpinnerTextStyle"
-        android:layout_width="160dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="16dp"
-        android:background="#1976D2"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.557" />
+    <androidx.cardview.widget.CardView
+    android:id="@+id/cardScrol"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toTopOf="@+id/btnCancelarGuardar"
+    app:layout_constraintTop_toBottomOf="@+id/editTextNombreFechNroCarv"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardElevation="0dp"
+    >
 
-    <Button
-        android:id="@+id/btnCancelar"
-        android:layout_width="156dp"
-        android:layout_height="67dp"
-        android:layout_marginEnd="216dp"
-        android:background="@drawable/btn_naranja_inicio"
-        android:text="Cancelar"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.909"
-        tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/btnGuardar"
-        android:layout_width="156dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="44dp"
-        android:background="@drawable/btn_verde_inicio"
-        android:text="Guardar"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        android:textStyle="bold"
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
+
+
+        <ScrollView
+            android:id="@id/scrollView2"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/border_button_sin_color"
+            android:layout_gravity="center"
+            tools:ignore="MissingConstraints">
+
+            <Spinner
+                android:id="@+id/SnnColor"
+                style="@style/SpinnerTextStyle"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                tools:ignore="DuplicateIds" />
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:background="@drawable/border_button_sin_color"
+            tools:ignore="MissingConstraints">
+
+            <Spinner
+                android:id="@+id/SnnUbicacion"
+                style="@style/SpinnerTextStyle"
+                android:layout_width="160dp"
+                android:layout_height="55dp"
+                android:layout_marginEnd="16dp"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.491" />
+        </ScrollView>
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/btnCancelarGuardar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.902"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.9"
+        app:layout_constraintWidth_percent="0.8">
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="0dp"
+            android:layout_height="67dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_naranja_inicio"
+            android:text="Cancelar"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="0dp"
+            android:layout_height="67dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/btn_verde_inicio"
+            android:text="Guardar"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

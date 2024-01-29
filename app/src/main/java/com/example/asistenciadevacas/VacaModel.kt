@@ -21,27 +21,24 @@ class VacaModel() : Parcelable {
         id_ubicacion = parcel.readInt()
         nombre_vaca = parcel.readString()
         fecha_nac = parcel.readString()
-        fecha_preniez = parcel.readString()
         caravana = parcel.readString()
         position = parcel.readInt()
     }
 
-    constructor(id_vaca: Int?,id_color_vaca: Int, id_ubicacion: Int, nombre_vaca: String, fecha_nac: String, fecha_preniez: String, caravana: String) : this() {
+    constructor(id_vaca: Int?,id_color_vaca: Int, id_ubicacion: Int, nombre_vaca: String, fecha_nac: String, caravana: String) : this() {
         this.id_vaca = id_vaca
         this.id_color_vaca=id_color_vaca
         this.id_ubicacion=id_ubicacion
         this.nombre_vaca=nombre_vaca
         this.fecha_nac=fecha_nac
-        this.fecha_preniez=fecha_preniez
         this.caravana=caravana
     }
 
-    constructor(id_color_vaca: Int, id_ubicacion: Int, nombre_vaca: String, fecha_nac: String, fecha_preniez: String, caravana: String) : this() {
+    constructor(id_color_vaca: Int, id_ubicacion: Int, nombre_vaca: String, fecha_nac: String, caravana: String) : this() {
         this.id_color_vaca=id_color_vaca
         this.id_ubicacion=id_ubicacion
         this.nombre_vaca=nombre_vaca
         this.fecha_nac=fecha_nac
-        this.fecha_preniez=fecha_preniez
         this.caravana=caravana
     }
 
@@ -51,7 +48,6 @@ class VacaModel() : Parcelable {
         id_ubicacion?.let { parcel.writeInt(it) }
         parcel.writeString(nombre_vaca)
         parcel.writeString(fecha_nac)
-        parcel.writeString(fecha_preniez)
         parcel.writeString(caravana)
         parcel.writeInt(position)
     }

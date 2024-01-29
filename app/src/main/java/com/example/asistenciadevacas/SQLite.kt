@@ -3,12 +3,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class SQLite(
-    context: Context?,
-    dbH: String?,
-    factory: SQLiteDatabase.CursorFactory?,
-    version: Int
-) : SQLiteOpenHelper(context, dbH, factory, version) {
+class SQLite(context: Context?, dbH: String?, factory: SQLiteDatabase.CursorFactory?, version: Int) : SQLiteOpenHelper(context, dbH, factory, version) {
     override fun onCreate(db: SQLiteDatabase?) {
         //tabla COLOR
         db?.execSQL("""
@@ -52,8 +47,9 @@ class SQLite(
         """)
     }
 
-    override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {
-
+    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+        if (newVersion > oldVersion) {
+            db?.execSQL("ALTER TABLE vaca ADD COLUMN estado INTEGER DEFAULT 0")
+        }
     }
-
 }

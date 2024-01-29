@@ -9,6 +9,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //supportActionBar?.apply {
+        //    setDisplayShowHomeEnabled(true)
+        //    setLogo(R.drawable.tu_logo)
+        //    setDisplayUseLogoEnabled(true)
+        //}
+
         val btnVerListaVacas = findViewById<Button>(R.id.btnVerListaVacas)
         val btnTomarAsistenciaVacas = findViewById<Button>(R.id.btnTomarAsitenciaVacas)
 

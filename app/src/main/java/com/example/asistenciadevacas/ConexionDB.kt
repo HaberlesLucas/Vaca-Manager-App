@@ -58,10 +58,9 @@ class ConexionDB {
             val id_ubicacion = cursor.getInt(cursor.getColumnIndexOrThrow("id_ubicacion"))
             val nombre = cursor.getString(cursor.getColumnIndexOrThrow("nombre_vaca"))
             val nacimiento = cursor.getString(cursor.getColumnIndexOrThrow("fecha_nac"))
-            val preniez = cursor.getString(cursor.getColumnIndexOrThrow("fecha_preniez"))
             val caravana = cursor.getString(cursor.getColumnIndexOrThrow("caravana"))
 
-            vacas.add(VacaModel(id,id_color, id_ubicacion, nombre, nacimiento, preniez, caravana))
+            vacas.add(VacaModel(id,id_color, id_ubicacion, nombre, nacimiento, caravana))
         }
         cursor.close()
         return vacas
@@ -70,7 +69,7 @@ class ConexionDB {
     fun eliminarVaca(idVaca: Int?){
         val db = conexion.writableDatabase
         val selection = "id_vaca = " + idVaca.toString()
-        val selectionArgs = arrayOf(idVaca.toString())
+        //val selectionArgs = arrayOf(idVaca.toString())
         val deletedRows = db.delete("vaca", selection, null)
         println(deletedRows)
     }
@@ -92,8 +91,10 @@ class ConexionDB {
         while (cursor.moveToNext()) {
             val id = cursor.getInt(cursor.getColumnIndexOrThrow("id_vaca"))
             val nombre = cursor.getString(cursor.getColumnIndexOrThrow("nombre_vaca"))
+            //val estado = cursor.getInt(cursor.getColumnIndexOrThrow("estado"))
 
             // Crear un NuevoModelVaca utilizando el constructor sin argumentos
+
             val nuevoModel = NuevoModelVaca()
             nuevoModel.id_vaca = id
             nuevoModel.nombre_vaca = nombre

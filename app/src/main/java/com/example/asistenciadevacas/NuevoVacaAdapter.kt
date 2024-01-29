@@ -16,12 +16,13 @@ class NuevoVacaAdapter(val vacas: List<NuevoModelVaca>) : RecyclerView.Adapter<N
 
         fun bind(vaca: NuevoModelVaca) {
             nombreVaca.text = vaca.nombre_vaca
+            switchEstado.setOnCheckedChangeListener(null) // Eliminar el listener antiguo
             switchEstado.isChecked = vaca.estado
             switchEstado.setOnCheckedChangeListener { _, isChecked ->
-                //aca podría hacer algo cuando el sw cambie de estado
                 vaca.estado = isChecked
             }
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

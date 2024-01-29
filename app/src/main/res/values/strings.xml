@@ -1,7 +1,12 @@
 <resources>
-    <string name="app_name">Asistencia de Vacas</string>
+    <string name="app_name">CONTROL DE HACIENDA</string>
     <string name="editar">Editar</string>
     <string name="eliminar">Eliminar</string>
     <string name="ver_lista_de_vacas">VER LISTA DE VACAS</string>
     <string name="a_adir_vaca">AÑADIR VACA</string>
+    <string name="n_mero_de_caravana">Número de Caravana</string>
+    <string name="selecciona_color_y_ubicaci_n">SELECCIONA COLOR Y UBICACIÓN</string>
+    <string name="fecha_nacimiento">Fecha Nacimiento</string>
+    <string name="nombre">Nombre</string>
+    <string name="ver">VER</string>
 </resources>
