@@ -3,15 +3,20 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 
-class VacaAdapter(val vacas: List<VacaModel>)  : RecyclerView.Adapter<VacaAdapter.ViewHolder>() {
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view)  {
+class VacaAdapter(initialVacas: MutableList<VacaModel>) : RecyclerView.Adapter<VacaAdapter.ViewHolder>() {
+
+    private var vacasOriginal: List<VacaModel> = initialVacas.toList()
+    private var vacasFiltradas: MutableList<VacaModel> = initialVacas
+
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val nombreVaca: TextView = view.findViewById(R.id.vaca_nombre)
-        fun bind(vaca: VacaModel){
+
+        fun bind(vaca: VacaModel) {
             nombreVaca.text = vaca.nombre_vaca
         }
     }
@@ -23,24 +28,37 @@ class VacaAdapter(val vacas: List<VacaModel>)  : RecyclerView.Adapter<VacaAdapte
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int = vacas.size
+    override fun getItemCount(): Int = vacasFiltradas.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val vaca = vacas[position]
+        val vaca = vacasFiltradas[position]
         vaca.position = position
 
-        val btnDetalle = holder.itemView.findViewById<Button>(R.id.btnVerDetalle)
-        btnDetalle.setOnClickListener {
+        val itemContainer = holder.itemView.findViewById<ConstraintLayout>(R.id.itemContainer)
+        itemContainer.setOnClickListener {
             val intent = Intent(holder.itemView.context, DetalleVaca::class.java)
-            intent.putExtra("position", position)
-            startActivity(holder.itemView.context,intent, null)
+            intent.putExtra("id_vaca", vaca.id_vaca)
+            (holder.itemView.context as AppCompatActivity).startActivityForResult(intent, ListaDeVacas.REQUEST_CODE_DETALLE_VACA)
         }
+
         holder.bind(vaca)
     }
 
-    fun ordenarPosiciones(){
-        for (i in 0..vacas.size-1) {
-            vacas[i].position = i
+    fun ordenarPosiciones() {
+        for (i in vacasFiltradas.indices) {
+            vacasFiltradas[i].position = i
         }
+    }
+
+    fun updateData(nuevasVacas: List<VacaModel>) {
+        vacasFiltradas = nuevasVacas.toMutableList()
+        ordenarPosiciones()
+        notifyDataSetChanged()
+    }
+
+    fun restaurarListaOriginal() {
+        vacasFiltradas = vacasOriginal.toMutableList()
+        ordenarPosiciones()
+        notifyDataSetChanged()
     }
 }

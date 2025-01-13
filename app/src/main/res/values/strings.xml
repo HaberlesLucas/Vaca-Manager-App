@@ -9,4 +9,20 @@
     <string name="fecha_nacimiento">Fecha Nacimiento</string>
     <string name="nombre">Nombre</string>
     <string name="ver">VER</string>
+    <string name="orden_por_defecto_cargado">Orden por defecto (cargado)</string>
+    <string name="orden_a_z">Orden A-Z</string>
+    <string name="orden_z_a">Orden Z-A</string>
+    <string name="buscar">Buscar</string>
+    <string name="ingrese_caravana">Ingrese caravana</string>
+    <string name="caravana">Caravana</string>
+    <string name="seleccione_color_y_ubicaci_n">Seleccione Color y Ubicación</string>
+    <string name="color">Color</string>
+    <string name="ubication">Ubicación</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="guardar">Guardar</string>
+    <string name="dd_mm_aaaa">DD/MM/AAAA</string>
+    <string name="fecha_de_nacimiento">Fecha de Nacimiento</string>
+    <string name="ingrese_nombre">Ingrese nombre</string>
+    <string name="nombre_de_la_vaca">Nombre de la Vaca</string>
+
 </resources>

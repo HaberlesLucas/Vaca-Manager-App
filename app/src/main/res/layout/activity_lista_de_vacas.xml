@@ -6,17 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".ListaDeVacas">
 
+    <!-- Toolbar (menú de opciones) -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#F9FF"
+        android:theme="?attr/actionBarSplitStyle"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="4dp"/>
+
+    <!-- RecyclerView debajo del Toolbar -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListaVaca"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintBottom_toTopOf="@+id/btnAniadirVaca"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:listitem="@layout/item_lista_vaca" />
 
+    <!-- Botón de añadir vaca -->
     <Button
         android:id="@+id/btnAniadirVaca"
         android:layout_width="0dp"
@@ -29,5 +43,5 @@
         app:layout_constraintTop_toBottomOf="@+id/rvListaVaca"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

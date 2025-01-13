@@ -22,7 +22,9 @@ class ColoresUbicaciones {
         val ubicaciones = arrayListOf(
             "CAMPITO",
             "ISLA",
-            "OMAR/SAND"
+            "OMAR/SAND",
+            "INVERNADA",
+            "NENE"
         )
     }
 }

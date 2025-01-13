@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/orden_cargado"
+        android:title="@string/orden_por_defecto_cargado" />
+    <item
+        android:id="@+id/orden_az"
+        android:title="@string/orden_a_z" />
+    <item
+        android:id="@+id/orden_za"
+        android:title="@string/orden_z_a" />
+
+    <item
+        android:id="@+id/menu_buscar"
+        android:icon="@drawable/buscador"
+    android:title="@string/buscar"
+    app:showAsAction="ifRoom|collapseActionView"
+    app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+</menu>
