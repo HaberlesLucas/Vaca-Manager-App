@@ -21,15 +21,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Botón Ver Vacas -->
     <Button
         android:id="@+id/btnVerListaVacas"
         android:layout_width="156dp"
-        android:layout_height="67dp"
-        android:text="VER \nVACAS"
-        android:textSize="25sp"
+        android:layout_height="75dp"
+        android:text="VER\nVACAS"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="@color/white"
+        android:elevation="4dp"
         android:background="@drawable/btn_verde_inicio"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.917"
@@ -37,21 +40,78 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.912" />
 
+    <!-- Botón Tomar Asistencia -->
     <Button
         android:id="@+id/btnTomarAsitenciaVacas"
-        android:text="TOMAR ASISTENCIA"
         android:layout_width="156dp"
-        android:layout_height="67dp"
-        android:textColor="@color/white"
-        android:textSize="25sp"
+        android:layout_height="75dp"
+        android:text="TOMAR\nASISTENCIA"
+        android:textSize="24sp"
         android:textStyle="bold"
+        android:textColor="@color/white"
+        android:elevation="4dp"
         android:background="@drawable/btn_naranja_inicio"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.086"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.912" />
+
+
+    <LinearLayout
+        android:id="@+id/layoutBotones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:spacing="16dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtInfoAsistencia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btnRestaurar"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/btn_backup_style"
+            android:text="RESTAURAR"
+            android:drawableTop="@drawable/ic_restore"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnBackup"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/btn_backup_style"
+            android:text="BACKUP"
+            android:drawableTop="@drawable/ic_backup"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cerrar Sesión"
+        android:visibility="gone"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/layoutBotones"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
