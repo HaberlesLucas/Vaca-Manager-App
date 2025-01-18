@@ -28,6 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_vaca_asistencia" />
+        tools:listitem="@layout/item_vaca_asistencia"
+        android:contentDescription="@string/lista_de_vacas_asistidas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

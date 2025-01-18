@@ -45,12 +45,13 @@
                 <TextView
                     style="@style/FormLabel"
                     android:text="@string/fecha_de_nacimiento"/>
-
                 <EditText
                     android:id="@+id/txtFechaNacimiento"
                     style="@style/FormInput"
                     android:hint="@string/dd_mm_aaaa"
-                    android:inputType="date"/>
+                    android:contentDescription="@string/seleccion_fecha"
+                    android:focusable="false"
+                    android:clickable="true" />
 
                 <!-- Campo Número de Caravana -->
                 <TextView
@@ -111,6 +112,45 @@
                             style="@style/FormSpinner"/>
                     </LinearLayout>
                 </LinearLayout>
+                <TextView
+                    style="@style/FormLabel"
+                    android:text="Foto de la vaca"/>
+
+                <FrameLayout
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp">
+
+                    <!-- Imagen de la vaca -->
+                    <ImageView
+                        android:id="@+id/imgVaca"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/bordertextview"
+                        android:contentDescription="@string/vista_previa_de_la_foto" />
+
+                    <!-- Imagen "X" para eliminar la foto -->
+                    <ImageView
+                        android:id="@+id/imgEliminarFoto"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_gravity="end|top"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:src="@drawable/baseline_backspace_24"
+                        android:visibility="gone"
+                    android:contentDescription="@string/eliminar_foto"/>
+                </FrameLayout>
+                <Button
+                    android:id="@+id/btnSeleccionarFoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seleccionar Foto"
+                    android:layout_gravity="center" />
+
             </LinearLayout>
         </ScrollView>
     </androidx.cardview.widget.CardView>

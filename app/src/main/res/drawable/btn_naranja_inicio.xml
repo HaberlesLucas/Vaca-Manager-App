@@ -15,9 +15,9 @@
             <item>
                 <shape android:shape="rectangle">
                     <gradient
-                        android:startColor="#FF5722"
-                        android:endColor="#C6461E"
-                        android:angle="135"/>
+                        android:startColor="#D32F2F"
+                    android:endColor="#C62828"
+                    android:angle="135"/>
                     <corners android:radius="12dp"/>
                     <stroke
                         android:width="1dp"
@@ -27,4 +27,3 @@
         </layer-list>
     </item>
 </ripple>
-

@@ -24,7 +24,12 @@
     <string name="fecha_de_nacimiento">Fecha de Nacimiento</string>
     <string name="ingrese_nombre">Ingrese nombre</string>
     <string name="nombre_de_la_vaca">Nombre de la Vaca</string>
+    <string name="lista_de_vacas">Lista de Vacas</string>
+    <string name="lista_de_vacas_asistidas">Lista de Vacas Asistidas</string>
+    <string name="seleccion_fecha">Campo para seleccionar la fecha de nacimiento</string>
 
     <string name="server_client_id">517719569772-7d6692dc3ai7kqr2qcipmr93hn7f5do4.apps.googleusercontent.com</string>
-
+    <string name="fullscreen_image">Imagen a pantalla completa</string>
+    <string name="vista_previa_de_la_foto">Vista previa de la foto</string>
+    <string name="eliminar_foto">Eliminar foto</string>
 </resources>
